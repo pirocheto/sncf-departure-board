@@ -12,7 +12,7 @@ This project is a simple display board for SNCF train departures. It uses the SN
 uv sync && . .venv/bin/activate
 ```
 
-### Run the server with fastapi
+### Run the server with FastAPI
 
 ```bash
 fastapi run
