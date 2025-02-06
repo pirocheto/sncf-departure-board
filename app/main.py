@@ -1,14 +1,15 @@
+import re
+from datetime import datetime
+
+import requests
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+
 from app.settings import get_settings
-from datetime import datetime
-import requests
-import re
 
 settings = get_settings()
-
 
 app = FastAPI(title=settings.app_title)
 
@@ -16,7 +17,7 @@ app.mount("/static", StaticFiles(directory=settings.root_dir / "static"), name="
 templates = Jinja2Templates(directory=settings.root_dir / "templates")
 
 
-def pull_departures(hours, stop_area_code):
+def pull_departures(hours: int, stop_area_code: str):
     schedule_type = "terminus_schedules"
     url = f"https://api.navitia.io/v1/coverage/sncf/stop_areas/stop_area:SNCF:{stop_area_code}/{schedule_type}"
 
@@ -25,12 +26,12 @@ def pull_departures(hours, stop_area_code):
     params = {
         "start_page": "0",
         "depth": "0",
-        "from_datetime": datetime.now(),
+        "from_datetime": str(datetime.now()),
         "duration": str(hours * 60 * 60),
         "disable_geojson": "true",
     }
 
-    response = requests.get(url, headers=headers, params=params)
+    response = requests.get(url, headers=headers, params=params, timeout=5)
     response.raise_for_status()
     response_data = response.json()
 

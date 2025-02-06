@@ -1,7 +1,7 @@
-from pydantic_settings import BaseSettings
-from pathlib import Path
-from pydantic_settings import SettingsConfigDict
 from functools import lru_cache
+from pathlib import Path
+
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 root_dir = Path(__file__).parent
 
@@ -15,6 +15,7 @@ class Settings(BaseSettings):
 
     # To get an API key for SNCF region, you need to register on the following website:
     # https://numerique.sncf.com/startup/api/token-developpeur/
+    # Set the API key in the .env file
     navitia_api_key: str = "your-api-key"
 
     # Navition use stop_area_code to identify the station you want to get the schedule from
