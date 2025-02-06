@@ -1,0 +1,17 @@
+[project]
+name = "sncf-display-boards"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi[standard]>=0.115.8",
+    "jinja2>=3.1.5",
+    "pydantic-settings>=2.7.1",
+    "requests>=2.32.3",
+]
+
+[dependency-groups]
+dev = [
+    "types-requests>=2.32.0.20241016",
+]

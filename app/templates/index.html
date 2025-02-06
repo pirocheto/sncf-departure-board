@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }}</title>
+    <link
+      href="{{ url_for('static', path='css/styles.css') }}"
+      rel="stylesheet"
+    />
+    <script
+      defer
+      type="module"
+      src="{{ url_for('static', path='js/refresh.js') }}"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <h1>{{ stop_area_title }}</h1>
+      <div id="datetime">
+        <span id="date"></span>
+        <span id="clock"></span>
+      </div>
+    </header>
+    <main>
+      <table>
+        <tbody></tbody>
+      </table>
+    </main>
+  </body>
+</html>
