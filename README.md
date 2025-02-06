@@ -6,6 +6,10 @@ This project is a simple display board for SNCF train departures. It uses the SN
 
 ## Installation
 
+### Configure the application
+
+See the [app/settings.py](app/settings.py) to configure the application.
+
 ### Install dependencies with uv
 
 ```bash
