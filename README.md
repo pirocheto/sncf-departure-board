@@ -1,4 +1,4 @@
-# SNCF Display Board
+# SNCF Departures Board
 
 This project is a simple display board for SNCF train schedules. It is written in Python and uses the FastAPI web framework.
 
