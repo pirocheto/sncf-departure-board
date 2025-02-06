@@ -18,7 +18,7 @@ class Settings(BaseSettings):
     # Set the API key in the .env file
     navitia_api_key: str = "your-api-key"
 
-    # Navition use stop_area_code to identify the station you want to get the schedule from
+    # Navitia use stop_area_code to identify the station you want to get the schedule from
     # You can get the stop_area_code by using the script get_stop_area.py
     stop_area_code: str = "87682005"  # Melun
 
